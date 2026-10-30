@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Happy Birthday Nikita! 💖🎂</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="A magical, interactive birthday celebration created with love for sister Nikita!">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="theme-color" content="#ff6b8b">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<!-- Bootstrap & Fonts -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+</head>
+
+<body>
+	<!-- Loading Screen -->
+	<div class="loading"></div>
+
+	<!-- Background Ambient Canvas for Confetti & Magic Particles -->
+	<canvas id="confetti-canvas"></canvas>
+	<div class="stars-overlay"></div>
+
+	<!-- Audio Element -->
+	<audio class="song" preload="auto" loop>
+		<source src="hbd.mp3" type="audio/mp3">
+		Your browser does not support audio element.
+	</audio>
+
+	<!-- Top Floating Controls Header -->
+	<div class="top-header-bar">
+		<div class="top-pill-btn music-badge" id="music-toggle" title="Toggle Birthday Music">
+			<div class="music-disc"></div>
+			<span id="music-label">🎵 Play Music</span>
+		</div>
+		<button class="top-pill-btn" id="sfx-toggle" title="Toggle Sound Effects">
+			<span id="sfx-icon">🔊</span> SFX: On
+		</button>
+		<button class="top-pill-btn" id="confetti-btn" title="Launch Confetti Blast">
+			🎉 Confetti!
+		</button>
+		<button class="top-pill-btn" id="free-play-btn" title="Unlock and show all interactive elements">
+			✨ Free Play
+		</button>
+	</div>
+
+	<!-- 7 Interactive Balloons spelling N-I-K-I-T-A-❤️ -->
+	<div class="balloons-area">
+		<div class="balloons text-center" id="b1" data-letter="N" data-trait="Naturally Gorgeous ✨">
+			<h2 style="color:#FFF;">N</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b2" data-letter="I" data-trait="Incredibly Smart 💡">
+			<h2 style="color:#FFF;">I</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b3" data-letter="K" data-trait="Kindest Heart 🌸">
+			<h2 style="color:#FFF;">K</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b4" data-letter="I" data-trait="Inspiring Soul 🌟">
+			<h2 style="color:#FFF;">I</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b5" data-letter="T" data-trait="Truly Unstoppable 🚀">
+			<h2 style="color:#FFF;">T</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b6" data-letter="A" data-trait="Always My Bestie 💕">
+			<h2 style="color:#FFF;">A</h2>
+			<span class="balloon-badge">Pop! 🎈</span>
+		</div>
+		<div class="balloons text-center" id="b7" data-letter="❤️" data-trait="Loved to Infinity! 💖">
+			<h2 style="color:#FFF;">❤️</h2>
+			<span class="balloon-badge">Love! 💖</span>
+		</div>
+	</div>
+
+	<!-- Floating Balloon Border Asset -->
+	<img src="Balloon-Border.png" width="100%" class="balloon-border" alt="Decorative Balloons">
+
+	<!-- Main Stage Container -->
+	<div class="container">
+
+		<!-- Interactive Fairy String Lights Garland -->
+		<div class="lights-garland">
+			<div class="garland-wire"></div>
+			<div class="bulbs-row">
+				<div class="bulb-holder" id="holder_yellow" data-note="523.25" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_yellow"></div>
+					<div class="bulb-hint">C5 🎵</div>
+				</div>
+				<div class="bulb-holder" id="holder_red" data-note="587.33" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_red"></div>
+					<div class="bulb-hint">D5 🎵</div>
+				</div>
+				<div class="bulb-holder" id="holder_blue" data-note="659.25" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_blue"></div>
+					<div class="bulb-hint">E5 🎵</div>
+				</div>
+				<div class="bulb-holder" id="holder_green" data-note="698.46" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_green"></div>
+					<div class="bulb-hint">F5 🎵</div>
+				</div>
+				<div class="bulb-holder" id="holder_pink" data-note="783.99" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_pink"></div>
+					<div class="bulb-hint">G5 🎵</div>
+				</div>
+				<div class="bulb-holder" id="holder_orange" data-note="880.00" title="Tap to chime!">
+					<div class="bulb-socket"></div>
+					<div class="bulb" id="bulb_orange"></div>
+					<div class="bulb-hint">A5 🎵</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Interactive Animated Birthday Banner -->
+		<div class="banner-wrapper">
+			<img src="banner.png" class="bannar" id="main_banner" alt="Happy Birthday Banner" title="Tap banner for fireworks!">
+			<div class="banner-interactive-subtitle" id="banner-tag" title="Click to change message!">
+				🎂 Happy Birthday Dearest Nikita! 👑✨
+			</div>
+		</div>
+
+		<!-- Interactive High-Definition Birthday Cake & Candle -->
+		<div class="cake-cover">
+			<div class="cake" id="birthday_cake" title="Click cake or flame to interact!">
+				<div class="cake-plate"></div>
+				<!-- Bottom Layer -->
+				<div class="cake-tier-bottom">
+					<div class="drip-frosting-bottom"></div>
+				</div>
+				<!-- Top Layer -->
+				<div class="cake-tier-top">
+					<div class="drip-frosting-top"></div>
+				</div>
+				<!-- Candle & Flame -->
+				<div class="velas" id="candle_stick" title="Click candle to light or blow!">
+					<div class="fuego" id="candle_flame" title="Tap to blow out the candle!"></div>
+				</div>
+				<!-- Toppings Layer for interactive decorations -->
+				<div class="cake-toppings-layer" id="cake_toppings"></div>
+			</div>
+		</div>
+
+		<!-- Cake Action Controls Toolbar -->
+		<div class="cake-action-toolbar" id="cake_controls">
+			<button class="action-pill-btn" id="btn_blow_candle">🌬️ Blow Candle</button>
+			<button class="action-pill-btn" id="btn_cut_cake">🍰 Cut Slice</button>
+			<button class="action-pill-btn" data-topping="🍓">🍓 Strawberry</button>
+			<button class="action-pill-btn" data-topping="🍒">🍒 Cherry</button>
+			<button class="action-pill-btn" data-topping="🍫">🍫 Chocolate</button>
+			<button class="action-pill-btn" data-topping="✨">✨ Sparkles</button>
+		</div>
+
+		<!-- Sliced Cake Piece Celebration Modal -->
+		<div class="cake-slice-display" id="slice_modal">
+			<div class="slice-emoji">🍰</div>
+			<h3 style="color:#d81b60; font-weight:800; margin-top:5px;">Sweet Slice for Nikita! 😋</h3>
+			<p style="color:#555; font-size:14px; margin-bottom:15px;">
+				Here's the first sweet, delicious slice made specially for the best sister in the entire world! 🍓✨
+			</p>
+			<button class="story-nav-btn" id="close_slice_btn">Yum! Thank you! 💕</button>
+		</div>
+
+		<!-- Polaroid Memory Photo Card (Featuring bd1.jpg) -->
+		<div class="polaroid-container" id="polaroid_container">
+			<div class="polaroid-card" id="polaroid_card" title="Click to flip photo!">
+				<div class="polaroid-tape"></div>
+				<div class="polaroid-img-wrapper" id="polaroid_front">
+					<img src="bd1.jpg" class="polaroid-img" alt="Nikita Birthday Memory">
+				</div>
+				<div class="polaroid-caption" id="polaroid_caption">
+					Dearest Nikita • Pure Magic ✨
+					<div style="font-size:12px; color:#888; font-family:'Poppins', sans-serif; font-weight:400; margin-top:4px;">
+						(Tap to see message)
+					</div>
+				</div>
+				<div class="polaroid-back" id="polaroid_back">
+					"To Nikita: May your smile never fade, your laughter always echo, and your days be filled with endless joy and sparkles! Love you always! ❤️"
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Surprise Sister Gift Box & Privilege Coupons 🎁 -->
+		<div class="gift-section" id="gift_section">
+			<div class="gift-box-3d" id="gift_box" title="Tap to unwrap Nikita's Gift!">
+				<div class="gift-lid">
+					<div class="gift-bow">🎀</div>
+				</div>
+				<div class="gift-base">
+					<div class="gift-ribbon-v"></div>
+					<div class="gift-ribbon-h"></div>
+				</div>
+			</div>
+			<div style="margin-top:12px; font-weight:700; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,0.5);" id="gift_hint">
+				🎁 Tap the gift box to open Nikita's Sister Treats!
+			</div>
+
+			<!-- Revealed Sister Privilege Coupons -->
+			<div class="gift-coupons-grid" id="coupons_grid">
+				<div class="coupon-card" title="Click to redeem!">
+					<div class="coupon-emoji">🍕🧋</div>
+					<div class="coupon-title">Brother's Treat Ticket</div>
+					<div class="coupon-desc">Redeemable anytime for pizza, boba tea, or your favorite dessert on me!</div>
+				</div>
+				<div class="coupon-card" title="Click to redeem!">
+					<div class="coupon-emoji">🧹🛋️</div>
+					<div class="coupon-title">Chore Immunity Pass</div>
+					<div class="coupon-desc">Present this coupon to pass any house chore directly to your brother!</div>
+				</div>
+				<div class="coupon-card" title="Click to redeem!">
+					<div class="coupon-emoji">📞💖</div>
+					<div class="coupon-title">24/7 Sister Hotline</div>
+					<div class="coupon-desc">Unlimited late-night venting, gossip, life advice, and unconditional sibling backup!</div>
+				</div>
+				<div class="coupon-card" title="Click to redeem!">
+					<div class="coupon-emoji">🛍️🎬</div>
+					<div class="coupon-title">Shopping & Movie Spree</div>
+					<div class="coupon-desc">One guaranteed fun day out picking movies and shopping with zero complaints!</div>
+				</div>
+			</div>
+
+			<div style="margin-top: 18px;">
+				<button class="action-pill-btn" id="btn_virtual_hug" style="font-size:15px; padding:10px 22px;">
+					🫂 Send Huge Sister Hug!
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Bottom Sequential Celebration Toolbar -->
+	<div class="navbar navbar-fixed-bottom">
+		<div class="control-buttons-wrapper">
+			<button class="btn-celebrate" id="turn_on">💡 Turn On Lights</button>
+			<button class="btn-celebrate" id="play">🎵 Play Music</button>
+			<button class="btn-celebrate" id="bannar_coming">🎀 Let's Decorate</button>
+			<button class="btn-celebrate" id="balloons_flying">🎈 Fly With Balloons</button>
+			<button class="btn-celebrate" id="cake_fadein">🎂 Delicious Cake</button>
+			<button class="btn-celebrate" id="light_candle">🕯️ Light Candle</button>
+			<button class="btn-celebrate" id="wish_message">💖 Happy Birthday Nikita</button>
+			<button class="btn-celebrate" id="open_gift">🎁 Open Nikita's Gift</button>
+		</div>
+	</div>
+
+	<!-- Interactive Hint Toast Notification -->
+	<div class="interaction-hint-bar" id="hint_toast">
+		✨ Tip: Every element on the screen is interactive! Tap lights, balloons, or cake to play!
+	</div>
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="effect.js"></script>
+</body>
+
+</html>

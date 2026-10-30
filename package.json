@@ -1,0 +1,8 @@
+{
+  "name": "birthday",
+  "version": "1.0.0",
+  "description": "Happy Birthday Nikita",
+  "scripts": {
+    "start": "npx http-server -p 8081"
+  }
+}
